@@ -1,15 +1,51 @@
 # light_weight_picker
 
-A new Flutter plugin project.
+A file picker plugin without any dependencies.
 
 ## Getting Started
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+This plugin allows developers to use native file picker api on Android and iOS without any dependencies.
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Usage
 
+```dart
+
+import 'package:light_weight_picker/light_weight_picker.dart';
+import 'package:light_weight_picker/selected_file.dart';
+
+class _MyAppState extends State<MyApp> {
+  final lightWeightPickerPlugin = LightWeightPicker();
+
+  pickFile() async {
+    SelectedFile? selectedFile = await lightWeightPickerPlugin
+        .browseAndGetFile(fileType: [FileTypes.All]);
+    if (selectedFile != null) {
+      debugPrint(selectedFile.fileName.toString());
+      debugPrint(selectedFile.fileExtension.toString());
+      debugPrint(selectedFile.fileBytes.toString());
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Plugin example app'),
+        ),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: pickFile,
+            child: const Text("Browse"),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```

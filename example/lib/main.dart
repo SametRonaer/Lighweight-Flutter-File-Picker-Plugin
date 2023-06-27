@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:light_weight_picker/light_weight_picker.dart';
 import 'package:light_weight_picker/selected_file.dart';
 
@@ -21,7 +18,7 @@ class _MyAppState extends State<MyApp> {
 
   _pickFile() async {
     SelectedFile? selectedFile = await _lightWeightPickerPlugin
-        .browseAndGetFile(fileType: [FileTypes.All]);
+        .browseAndGetFile(fileType: [FileTypes.all]);
     if (selectedFile != null) {
       debugPrint(selectedFile.fileName.toString());
       debugPrint(selectedFile.fileExtension.toString());

@@ -29,30 +29,30 @@ class MethodChannelLightWeightPicker extends LightWeightPickerPlatform {
   _getFileTypes({List<FileTypes>? fileTypes}) {
     List<String> fileTypeData = [];
     if (fileTypes == null ||
-        fileTypes.contains(FileTypes.All) ||
+        fileTypes.contains(FileTypes.all) ||
         fileTypes.isEmpty) {
       fileTypeData.add("All");
       return fileTypeData;
     }
-    if (fileTypes.contains(FileTypes.Audio)) {
+    if (fileTypes.contains(FileTypes.audio)) {
       fileTypeData.add("Audios");
     }
-    if (fileTypes.contains(FileTypes.Image)) {
+    if (fileTypes.contains(FileTypes.image)) {
       fileTypeData.add("Images");
     }
-    if (fileTypes.contains(FileTypes.Video)) {
+    if (fileTypes.contains(FileTypes.video)) {
       fileTypeData.add("Videos");
     }
-    if (fileTypes.contains(FileTypes.Documents)) {
+    if (fileTypes.contains(FileTypes.documents)) {
       fileTypeData.add("Documents");
     }
-    if (fileTypes.contains(FileTypes.Jpeg)) {
+    if (fileTypes.contains(FileTypes.jpeg)) {
       fileTypeData.add("Jpg");
     }
-    if (fileTypes.contains(FileTypes.Png)) {
+    if (fileTypes.contains(FileTypes.png)) {
       fileTypeData.add("Png");
     }
-    if (fileTypes.contains(FileTypes.Pdf)) {
+    if (fileTypes.contains(FileTypes.pdf)) {
       fileTypeData.add("Pdf");
     }
     return fileTypeData;

@@ -1,14 +1,14 @@
 import 'dart:typed_data';
 
 enum FileTypes {
-  All,
-  Audio,
-  Image,
-  Jpeg,
-  Png,
-  Pdf,
-  Documents,
-  Video,
+  all,
+  audio,
+  image,
+  jpeg,
+  png,
+  pdf,
+  documents,
+  video,
 }
 
 class SelectedFile {
